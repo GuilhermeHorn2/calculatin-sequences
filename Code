@@ -1,0 +1,29 @@
+
+def f1(n):
+    #1/1 + 1/2 +...+1/n
+    l = []
+    for i in range(n):
+        l.append(1/(i+1))
+    r = round(sum(l),2)
+    return r
+
+# 1/1 + 2/3 + 3/5 +...+ n/m:
+k = int(input(':'))
+a = []
+b = []
+for i in range(k):
+    a.append(1+i)
+    if i - 1 not in range(k):
+        b.append(1)
+    else:
+        b.append(b[i-1]+2)
+
+
+s = []
+m = []
+for i in range(len(a)):
+    s.append(a[i]/b[i])
+    m.append(str(a[i]) + '/' + str(b[i]))
+print(m)
+print(round(sum(s),2))
+
